@@ -1,3 +1,9 @@
+# Simulación
+# Unidad 2
+# Práctica 1. Generación de numeros pseudoaleatorios por el método de medios al cuadrado
+# Profesor: José Gabriel Rodríguez Rivas
+# Alumno: Romero Rodríguez Leonardo Antonio
+
 # Se eleva al cuadrado la semilla, se calcula la nueva semilla y se devuelve el nuevo valor de la semilla
 def Calcular_Semilla_MC(semilla, n_digitos):
     # Elevar la semilla al cuadrado
@@ -14,14 +20,14 @@ def Calcular_Semilla_CC(semilla, semilla2, n_digitos):
     centro = producto[len(producto)//2 - n_digitos//2 : len(producto)//2 + n_digitos//2]
     return semilla2, int(centro)
     
-# Numeros aleatorios calculados por el metodo de medios al cuadrado
+# Numeros aleatorios calculados por el método de medios al cuadrado
 def medios_al_cuadrado(semilla,n_digitos,iteraciones):
     resultados = []
     for _ in range(iteraciones):
         semilla = Calcular_Semilla_MC(semilla, n_digitos)
         resultados.append(semilla)
     return resultados
-# Numeros aleatorios calculados por el metodo de centros al cuadrado
+# Numeros aleatorios calculados por el método de centros al cuadrado
 def centros_al_cuadrado(semilla,semilla2,n_digitos,iteraciones):
     resultados = []
     for _ in range(iteraciones):
@@ -38,11 +44,11 @@ iteraciones = 100
 
 # Imprimir los resultados
 # Medios al cuadrado
-print("Numeros aleatorios calculados por el metodo de medios al cuadrado")
+print("Numeros aleatorios calculados por el método de medios al cuadrado")
 for i, numero in enumerate(medios_al_cuadrado(semilla,n_digitos,iteraciones), 1):
   print(f"Numero Aleatorio {i}: {numero}")
 print("")
 # Centros al cuadrado
-print("Numeros aleatorios calculados por el metodo de centros al cuadrado")
+print("Numeros aleatorios calculados por el método de centros al cuadrado")
 for i, numero in enumerate(centros_al_cuadrado(semilla,semilla2,n_digitos,iteraciones), 1):
   print(f"Numero Aleatorio {i}: {numero}")
